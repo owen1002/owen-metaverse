@@ -6,13 +6,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@walletconnect/web3-provider": "^1.7.0",
+    "moralis": "^0.0.168",
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-moralis": "^0.3.1"
   },
   "devDependencies": {
+    "@types/react": "^17.0.37",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.4",
-    "tailwindcss": "^3.0.0"
+    "tailwindcss": "^3.0.0",
+    "typescript": "^4.5.4"
   }
 }
