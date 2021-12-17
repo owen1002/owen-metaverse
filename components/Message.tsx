@@ -15,7 +15,7 @@ function Message({ message }) {
       }`}
     >
       <div className={`relative g-8 w-8 ${isMyMessage && "order-last"}`}>
-        <Avatar username={message.get("username")} />
+        <Avatar username={message.get("ethAddress")} />
       </div>
       <div
         className={`flex space-x-4 p-3 rounded-lg bg-[#056162] ${

@@ -7,7 +7,7 @@ function Avatar({username=""}) {
 
   return (
     <Image
-      src={`https://avatars.dicebear.com/api/avataaars/${username || user.getUsername()}.svg`}
+      src={`https://avatars.dicebear.com/api/avataaars/${username || user.get('ethAddress')}.svg`}
       layout="fill"
       className="rounded-full"
     />
