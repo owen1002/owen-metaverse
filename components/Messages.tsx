@@ -22,7 +22,7 @@ function Messages() {
 
   return (
     <div className="pb-56">
-      <div className="space-y-10 p-4">
+      <div className="space-y-5 p-4">
         {data.map((message) => (
           <Message key={message.id} message={message} />
         ))}
@@ -31,7 +31,6 @@ function Messages() {
         <SendMessage endOfMessageRef={endOfMessageRef} />
       </div>
       <div ref={endOfMessageRef} className="text-center text-gray-400 mt-5">
-        <p>up to date!</p>
       </div>
     </div>
   )

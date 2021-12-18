@@ -15,7 +15,7 @@ export default function Home() {
         <title>Owen Metaverse</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="max-x-screen-2xl mx-auto">
+      <div className="max-w-screen-2xl mx-auto">
         {/* Header */}
         <Header />
         <Messages />

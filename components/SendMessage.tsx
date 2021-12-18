@@ -30,8 +30,8 @@ function SendMessage({ endOfMessageRef }) {
   }
 
   return (
-    <div className="w-full bg-[#131c21] flex justify-center fixed bottom-20 py-2">
-      <form className="flex w-11/12 bottom-10 bg-black opacity-80 px-6 py-2 max-w-2xl shadow-xl rounded-full items-center">
+    <div className="max-w-screen-2xl w-full bg-[#131c21] flex justify-center fixed bottom-0 py-2">
+      <form className="flex w-full bg-black opacity-80 px-6 py-2 max-w-2xl shadow-xl rounded-full items-center">
         <input
           type="text"
           className="flex-grow outline-none bg-transparent text-white placeholder-gray-500 pr-5"
@@ -40,7 +40,7 @@ function SendMessage({ endOfMessageRef }) {
           onChange={(e) => setMessage(e.target.value)}
         />
         <button onClick={sendMessage} type="submit">
-          <ArrowCircleRightIcon className="h-8 w-8 text-blue-400  rounded-full" />
+          <ArrowCircleRightIcon className="h-8 w-8 text-blue-400 rounded-full" />
         </button>
       </form>
     </div>

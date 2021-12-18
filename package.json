@@ -8,6 +8,7 @@
   "dependencies": {
     "@heroicons/react": "^1.0.5",
     "@walletconnect/web3-provider": "^1.7.0",
+    "color-hash": "^2.0.1",
     "moralis": "^0.0.168",
     "next": "latest",
     "react": "^17.0.2",

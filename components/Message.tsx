@@ -2,6 +2,7 @@ import React from "react"
 import { useMoralis } from "react-moralis"
 import Avatar from "./Avatar"
 import TimeAgo from "timeago-react"
+import { getUsernameColor } from "../lib/getUsernameColor"
 
 function Message({ message }) {
   const { user } = useMoralis()
@@ -10,30 +11,40 @@ function Message({ message }) {
 
   return (
     <div
-      className={`flex flex-end space-x-2 relative ${
-        isMyMessage && "justify-end"
-      }`}
+      className={`space-x-2 flex  ${isMyMessage && "justify-end"}`}
     >
-      <div className={`relative g-8 w-8 ${isMyMessage && "order-last"}`}>
-        <Avatar username={message.get("ethAddress")} />
+      <div className={`flex items-center `}>
+        <div className={`relative h-8 w-8 ${isMyMessage && "order-last ml-2"}`}>
+          <Avatar username={message.get("ethAddress")} />
+        </div>
+        <div
+          className={`flex flex-col px-4 py-2 rounded-lg bg-gray-800 text-white ${
+            isMyMessage ? "rounded-br-none" : "rounded-bl-none"
+          }`}
+        >
+          <p
+            className={`flex text-xs font-bold ${
+              isMyMessage ? "justify-end" : "justify-start"
+            } text-[${getUsernameColor(message.get("ethAddress"))}]`}
+          >
+            {message.get("username")}
+          </p>
+          <p
+            className={`flex text-sm ${
+              isMyMessage ? "justify-end" : "justify-start"
+            }`}
+          >
+            {message.get("message")}
+          </p>
+        </div>
       </div>
-      <div
-        className={`flex space-x-4 p-3 rounded-lg bg-[#056162] ${
-          isMyMessage ? "rounded-br-none" : "rounded-bl-none"
-        }`}
-      >
-        <p>{message.get("message")}</p>
-      </div>
-      <TimeAgo
-        datetime={message.createdAt}
-        className={`text-[10px] text-gray-400 ${
-          isMyMessage && "order-first pr-1"
-        }`}
-      />
 
-      <p className="absolute -bottom-5 text-xs text-white">
-        {message.get("username")}
-      </p>
+      <div className={`${isMyMessage && "order-first pr-2"} flex items-end`}>
+        <TimeAgo
+          datetime={message.createdAt}
+          className={`text-[10px] text-gray-400 `}
+        />
+      </div>
     </div>
   )
 }
